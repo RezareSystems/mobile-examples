@@ -561,9 +561,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\mobile-examples\\mobile-examples\\mobile-examples\\mobile-examples.csproj",
-      "projectName": "mobile-examples",
-      "projectPath": "D:\\Projects\\mobile-examples\\mobile-examples\\mobile-examples\\mobile-examples.csproj",
+      "projectUniqueName": "D:\\Projects\\mobile-examples\\mobile-examples\\mobile-examples\\mobileExamples.csproj",
+      "projectName": "mobileExamples",
+      "projectPath": "D:\\Projects\\mobile-examples\\mobile-examples\\mobile-examples\\mobileExamples.csproj",
       "packagesPath": "C:\\Users\\delangea\\.nuget\\packages\\",
       "outputPath": "D:\\Projects\\mobile-examples\\mobile-examples\\mobile-examples\\obj\\",
       "projectStyle": "PackageReference",
