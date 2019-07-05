@@ -56,11 +56,13 @@ namespace mobile_examples.Droid.Services
                 .AddExtras(extras)
                 .SetAutoCancel(true);
 
-            // Add all the buttons we want for the notification
-            //foreach (var button in content.NotificationButtons)
-            //{
-            //    AddButton(context, builder, iconId, button);
-            //}
+            var buttonIntent = new Intent("actionButton"); // Create an Intent to be used by this button
+
+            // the button needs to use this as a Pending Intent.   the .GetBroadcast method is used as we want to receive this
+            //pending intent though a broadcast receiver.   use a different method if you want to handle it in a different way
+            var buttonPending = PendingIntent.GetBroadcast(context, 0, buttonIntent, PendingIntentFlags.UpdateCurrent);
+
+            builder.AddAction(iconId, "action button", buttonPending); // Adds the button onto the notification
 
             var notification = builder.Build();
 
@@ -70,22 +72,6 @@ namespace mobile_examples.Droid.Services
             // Publish the notification
             notificationManager.Notify(content.Id, notification);
         }
-
-        /// <summary>
-        /// Adds the resume button onto the notification
-        /// </summary>
-        /// <param name="context"></param>
-        /// <param name="builder"></param>
-        /// <param name="iconId"></param>
-        /// <param name="button"></param>
-        ////private void AddButton(Context context, NotificationCompat.Builder builder, int iconId, BasicButton button)
-        ////{
-        ////    var buttonIntent = new Intent(button.IntentName);
-        ////    var buttonPending = PendingIntent.GetBroadcast(context,
-        ////        0, buttonIntent, PendingIntentFlags.UpdateCurrent);
-
-        ////    builder.AddAction(iconId, button.ButtonText, buttonPending);
-        ////}
 
         public void ClearNotification(int notificationID)
         {
