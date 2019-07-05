@@ -10,8 +10,11 @@ using Android.Runtime;
 using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
+using mobile_examples.Droid.Services;
 using mobileExamples.Services.NotificationService;
+using Xamarin.Forms;
 
+[assembly: Dependency(typeof(NotificationServiceDroid))]
 namespace mobile_examples.Droid.Services
 {
     public class NotificationServiceDroid : INotificationService
