@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using UserNotifications;
 
 namespace mobile_examples.iOS
 {
@@ -25,7 +26,43 @@ namespace mobile_examples.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
+            // Registering notification action categories
+            var categories = new UNNotificationCategory[] { RegisterTimeoutCategory()};
+            UNUserNotificationCenter.Current.SetNotificationCategories(new NSSet<UNNotificationCategory>(categories));
+
+            HandleLocalNotification(app, options);
+
             return base.FinishedLaunching(app, options);
+        }
+
+        private UNNotificationCategory RegisterTimeoutCategory()
+        {
+            // Create action
+            var actionID = "resume";
+            var title = "Resume";
+            var action = UNNotificationAction.FromIdentifier(actionID, title, UNNotificationActionOptions.None);
+
+            // Create category
+            var categoryID = "timeout";
+            var actions = new UNNotificationAction[] { action };
+            var intentIDs = new string[] { };
+            var categoryOptions = new UNNotificationCategoryOptions[] { };
+            var category =
+                UNNotificationCategory.FromIdentifier(categoryID, actions, intentIDs, UNNotificationCategoryOptions.None);
+
+            return category;
+        }
+
+        private void HandleLocalNotification(UIApplication app, NSDictionary options)
+        {
+            // Use Notification Center after iOS 10
+            if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0) || options == null) return;
+
+            if (options.ContainsKey(UIApplication.LaunchOptionsLocalNotificationKey))
+            {
+                var localNotification = options[UIApplication.LaunchOptionsLocalNotificationKey] as UILocalNotification;
+                if (localNotification != null) ReceivedLocalNotification(app, localNotification);
+            }
         }
     }
 }

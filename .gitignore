@@ -1,3 +1,7 @@
 mobile-examples/.vs/*
 mobile-examples/mobile-examples.Android/obj/Debug/90/mobile-examples.Android.csproj.CoreCompileInputs.cache
 mobile-examples/mobile-examples.Android/obj/Debug/90/mobile-examples.Android.csprojAssemblyReference.cache
+mobile-examples/mobile-examples.Android/bin/
+mobile-examples/mobile-examples.Android/obj/
+mobile-examples/mobile-examples/bin/
+mobile-examples/mobile-examples/obj/

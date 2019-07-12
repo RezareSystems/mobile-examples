@@ -840,6 +840,20 @@
           "build/Xamarin.Forms.props": {},
           "build/Xamarin.Forms.targets": {}
         }
+      },
+      "mobileExamples/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Xamarin.Essentials": "1.1.0",
+          "Xamarin.Forms": "4.0.0.425677"
+        },
+        "compile": {
+          "bin/placeholder/mobileExamples.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/mobileExamples.dll": {}
+        }
       }
     }
   },
@@ -1963,6 +1977,11 @@
         "xamarin.forms.4.0.0.425677.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
+    },
+    "mobileExamples/1.0.0": {
+      "type": "project",
+      "path": "../mobile-examples/mobileExamples.csproj",
+      "msbuildProject": "../mobile-examples/mobileExamples.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1975,7 +1994,8 @@
       "Xamarin.Android.Support.v7.CardView >= 28.0.0.1",
       "Xamarin.Android.Support.v7.MediaRouter >= 28.0.0.1",
       "Xamarin.Essentials >= 1.1.0",
-      "Xamarin.Forms >= 4.0.0.425677"
+      "Xamarin.Forms >= 4.0.0.425677",
+      "mobileExamples >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2012,7 +2032,11 @@
       },
       "frameworks": {
         "monoandroid90": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Projects\\mobile-examples\\mobile-examples\\mobile-examples\\mobileExamples.csproj": {
+              "projectPath": "D:\\Projects\\mobile-examples\\mobile-examples\\mobile-examples\\mobileExamples.csproj"
+            }
+          }
         }
       }
     },
