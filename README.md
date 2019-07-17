@@ -10,3 +10,14 @@ Examples on how to create notifications with more functionality then just the ba
 
 ### Notification Buttons
 Examples with adding buttons to a notification to get input from the user.
+
+
+## Background Audio
+How to set up the different OS to play audio files while backgrounded
+
+### Android
+No aditional setup needed.   just play the file
+
+### iOS
+In the info.plist file enable audio under the "background modes".
+Add the indicated lines in the AppDelegate file under the "FinishedLaunching" method
