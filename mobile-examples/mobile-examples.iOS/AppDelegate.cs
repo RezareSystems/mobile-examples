@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using AVFoundation;
 using Foundation;
 using UIKit;
 using UserNotifications;
@@ -31,6 +31,11 @@ namespace mobile_examples.iOS
             UNUserNotificationCenter.Current.SetNotificationCategories(new NSSet<UNNotificationCategory>(categories));
 
             HandleLocalNotification(app, options);
+
+            // Background Audio
+            var currentSession = AVAudioSession.SharedInstance();
+            currentSession.SetCategory(AVAudioSessionCategory.Playback, AVAudioSessionCategoryOptions.MixWithOthers);
+            currentSession.SetActive(true);
 
             return base.FinishedLaunching(app, options);
         }

@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="UserNotificationCenterDelegate.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,6 +139,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
+    <ProjectReference Include="..\mobile-examples\mobileExamples.csproj">
+      <Project>{D5453C3D-2386-4466-A140-40DE90FE6BAB}</Project>
+      <Name>mobileExamples</Name>
+    </ProjectReference>
     <ProjectReference Include="..\mobile_examples\mobile_examples.csproj">
       <Project>{B735DFCE-B8C9-48C2-887B-98DB43FC6607}</Project>
       <Name>mobile_examples</Name>
