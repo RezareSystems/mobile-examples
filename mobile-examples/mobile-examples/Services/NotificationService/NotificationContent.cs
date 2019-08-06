@@ -68,5 +68,10 @@ namespace mobileExamples.Services.NotificationService
         {
             return (CustomData != null && CustomData.Count > 0);
         }
+
+        /// <summary>
+        /// the name of the action category for use on iOS
+        /// </summary>
+        public string iOSCategory;
     }
 }
